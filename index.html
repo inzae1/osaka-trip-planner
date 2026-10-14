@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>오사카 2박3일 먹맥 지도 플래너</title>
+  <meta name="description" content="공식 주소와 실제 좌표·지도 타일을 기반으로 만든 오사카 2박3일 여행 플래너" />
+  <link rel="preconnect" href="https://maps.google.com">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="map-fallback.css" />
+  <link rel="stylesheet" href="google-map.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="eyebrow">OSAKA · 2 NIGHTS / 3 DAYS</div>
+    <h1>먹고, 마시고,<br><em>정확하게</em> 걷는 오사카</h1>
+    <p>공식 주소를 잠그고 실제 좌표를 검증한 여행 플래너. 지도는 Google Maps, 일정 경로는 주소 기반입니다.</p>
+    <div class="hero-actions">
+      <a href="#overview" class="button primary">전체 지도 보기</a>
+      <a class="button ghost" id="locateBtn" href="https://www.google.com/maps" target="_blank">Google Maps 열기</a>
+    </div>
+    <div class="status-row">
+      <span><b>새 숙소 기준</b> 주소 핀</span><span><b>3</b>일 실제 지도</span><span>갱신일 <b>2026.10.14</b></span>
+    </div>
+  </header>
+
+  <nav class="day-nav" aria-label="일차 선택">
+    <button class="active" data-day="all">전체</button>
+    <button data-day="1">DAY 1</button>
+    <button data-day="2">DAY 2</button>
+    <button data-day="3">DAY 3</button>
+  </nav>
+
+  <main>
+    <section id="overview" class="section map-section">
+      <div class="section-head"><div><span class="kicker">THE BIG PICTURE</span><h2>전체 개요 지도</h2></div><p>우메다·스이타·난바의 위치 관계와 3일의 이동 흐름</p></div>
+      <div class="route-map-tabs" aria-label="지도에 표시할 동선 선택">
+        <button class="active" data-route="d1">DAY 1 전체</button>
+        <button data-route="d2">DAY 2 전체</button>
+        <button data-route="d3">DAY 3 난바</button>
+      </div>
+      <div class="api-toolbar"><span>한국어 번호 핀 · 반복 장소는 4·11·15처럼 묶어 표시</span><button id="apiSettings" type="button">Google Maps API 설정</button></div>
+      <div class="route-layout">
+        <div class="map-shell pro-map-shell">
+          <div id="gmapsCanvas" class="google-map" aria-label="한국어 일정 핀이 표시되는 Google 지도"></div>
+          <iframe id="routeMap" class="google-map fallback-map" src="https://maps.google.com/maps?q=Umeda%2C%20Osaka&z=14&output=embed" title="Google Maps 대체 지도" loading="eager" allowfullscreen></iframe>
+          <div class="api-gate" id="apiGate">
+            <form id="apiForm"><strong>지도에 한국어 일정 핀 표시</strong><p>Google Maps API 키를 입력하면 순번·시간·장소명과 실제 경로선이 표시됩니다. 키는 이 브라우저에만 저장됩니다.</p><div><input id="apiKey" type="password" autocomplete="off" placeholder="Google Maps API 키"><button type="submit">지도 적용</button></div><small>Maps JavaScript API와 Directions API를 활성화하세요.</small></form>
+          </div>
+        </div>
+      </div>
+      <div class="route-buttons">
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=大阪市中央区安土町3-2-6&destination=大阪市北区西天満3-6-35&waypoints=大阪市中央区備後町4-3-4%7C大阪市中央区北浜東5-1%7C大阪市中央区北浜1丁目&travelmode=walking">DAY 1 혼마치→기타하마 ↗</a>
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=大阪市北区西天満3-6-35&destination=大阪市中央区安土町3-2-6&waypoints=大阪市北区曽根崎新地1-10-1%7C大阪市北区堂島1-5-30%7C大阪市北区梅田1-2-2%7C大阪市北区芝田1-7-2%7C大阪市北区梅田地下街2-5&travelmode=walking">DAY 1 우메다→혼마치 ↗</a>
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=堺筋本町駅&destination=アサヒビールミュージアム&waypoints=阪急吹田駅&travelmode=transit">DAY 2 스이타 ↗</a>
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=大阪市北区中崎西1-4-22&destination=大阪市中央区安土町3-2-6&waypoints=大阪市北区大深町1-1%7C大阪市北区角田町9-20%7C大阪市北区角田町9-10%7C大阪市北区梅田地下街2-5%7C大阪市北区角田町9-26%7C大阪市中央区船場中央4-1-10&travelmode=walking">DAY 2 나카자키초→혼마치 ↗</a>
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Osaka%20Metro%20なんば駅&destination=南海なんば駅&waypoints=大阪市中央区道頓堀1-7-26%7C大阪市中央区難波1-2-16%7C大阪市浪速区日本橋4-8-10%7C大阪市中央区難波千日前11-24%7C大阪市中央区難波千日前7-10%7C大阪市中央区難波3-1-32&travelmode=walking">DAY 3 난바 ↗</a>
+      </div>
+    </section>
+
+    <section class="section itinerary-section">
+      <div class="section-head"><div><span class="kicker">POINT TO POINT</span><h2>3일 전체 일정</h2></div><p>각 구간의 도보·대중교통 예상시간 포함</p></div>
+      <div id="dayCards"></div>
+    </section>
+
+    <section class="section detail-maps">
+      <div class="section-head"><div><span class="kicker">NEIGHBORHOOD MAPS</span><h2>지역별 확대 지도</h2></div><p>복잡한 구간은 실제 축척으로 따로 확인</p></div>
+      <article class="detail-card"><div class="detail-copy"><span class="map-tag">UMEDA</span><h3>우메다 확대</h3><p>호텔, 신우메다식도거리, 리쿼샵, 나카자키초를 한 장에.</p></div><iframe class="google-map small" src="https://maps.google.com/maps?q=Umeda%2C%20Osaka&z=15&output=embed" title="우메다 Google 지도" loading="lazy" allowfullscreen></iframe></article>
+      <article class="detail-card"><div class="detail-copy"><span class="map-tag">SUITA</span><h3>스이타 확대</h3><p>사카이스지혼마치에서 한큐 스이타역으로 이동하고, 박물관까지 약 10분 걷는 기준입니다. 예약 시간 15분 전 도착 권장.</p></div><iframe class="google-map small" src="https://maps.google.com/maps?q=Asahi%20Beer%20Museum%20Suita&z=16&output=embed" title="스이타 Google 지도" loading="lazy" allowfullscreen></iframe></article>
+      <article class="detail-card"><div class="detail-copy"><span class="map-tag">NAMBA</span><h3>난바 확대</h3><p><strong>Osaka Metro 난바역</strong>과 <strong>난카이 난바역</strong>은 별도 핀입니다. 짐 회수 후 남쪽의 난카이역으로 이동하세요.</p></div><iframe class="google-map small" src="https://maps.google.com/maps?q=Namba%2C%20Osaka&z=15&output=embed" title="난바 Google 지도" loading="lazy" allowfullscreen></iframe></article>
+    </section>
+
+    <section class="section verification">
+      <div class="section-head"><div><span class="kicker">VERIFIED PLACES</span><h2>주소·좌표 검증표</h2></div><p>동명이점 방지를 위해 주소를 기준으로 확정</p></div>
+      <div class="table-tools"><input id="searchInput" type="search" placeholder="장소 또는 주소 검색" /><button id="downloadCsv" class="button ghost dark">CSV 다운로드</button></div>
+      <div class="table-wrap"><table><thead><tr><th>일차</th><th>장소</th><th>확정 주소</th><th>좌표</th><th>근거</th></tr></thead><tbody id="placeRows"></tbody></table></div>
+    </section>
+
+    <section class="section alerts">
+      <div class="alert-card"><span>01</span><div><h3>난바역 두 곳을 혼동하지 마세요</h3><p>아침 짐 보관은 <b>Osaka Metro 난바역</b>, 공항 출발은 <b>난카이 난바역</b>. 도보 7~10분을 따로 잡았습니다.</p></div></div>
+      <div class="alert-card"><span>02</span><div><h3>ULTRA WHISKY 주소 고정</h3><p>〒556-0005 Osaka, Naniwa Ward, Nipponbashi, 4 Chome−8−10 三鑛ビル. 난바 중심에서 동쪽으로 왕복하는 구간입니다.</p></div></div>
+      <div class="alert-card"><span>03</span><div><h3>영업시간은 당일 재확인</h3><p>매장 휴무·임시 영업시간은 바뀔 수 있습니다. 공식 링크를 각 핀과 검증표에 연결했습니다.</p></div></div>
+    </section>
+  </main>
+  <footer><p>실제 좌표·공식 주소 기반 · 이동시간은 신호, 지하상가, 대기시간에 따라 달라질 수 있습니다.</p></footer>
+  <script src="app.js"></script>
+  <script src="google-routes.js"></script>
+  <script src="google-pro.js"></script>
+</body>
+</html>
