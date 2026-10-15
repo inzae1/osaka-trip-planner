@@ -6,10 +6,10 @@
   const canvas=document.getElementById('gmapsCanvas');
   const fallback=document.getElementById('routeMap');
   let map, currentKey='d1', markers=[], renderers=[], hoverInfo, activeInfo;
-  const planIds={d1:['kix','tengachaya','kitahamaSt','apa','saru','manpuku','kita','kingN','lika','yama','cabin','hitori','akaU','mcd','apa'],d2:['apa','sukiya','kitahamaSt','hsuita','asahi','hsuita','maren','apa','naka','black','matsu','akaU','hana','hanamaru','sumi','apa'],d3:['apa','kitahamaSt','metro','kin','melon','hozen','kingB','kona','ultra','akaN','metro','nankai']};
+  const planIds={d1:['kix','tengachaya','kitahamaSt','apa','saru','manpuku','kita','apre','kingN','lika','yama','cabin','hitori','akaU','iwai','mcd','apa'],d2:['apa','sukiya','kitahamaSt','hsuita','asahi','hsuita','maren','apa','naka','black','matsu','akaU','hana','hanamaru','sumi','apa'],d3:['apa','kitahamaSt','metro','kin','melon','hozen','kingB','kona','ultra','akaN','metro','nankai']};
   const planTimes={}; Object.entries(routePlans).forEach(([k,v])=>planTimes[k]=v.stops.map(x=>x[0]));
   function clearMap(){markers.forEach(x=>x.setMap(null));renderers.forEach(x=>x.setMap(null));markers=[];renderers=[];hoverInfo?.close();activeInfo?.close();activeInfo=null}
-  function modeFor(key,index){return (key==='d1'&&(index<=1||index===10||index===12))||(key==='d2'&&(index===2||index===5||index===6||index===7||index===12))||(key==='d3'&&index===1)?google.maps.TravelMode.TRANSIT:google.maps.TravelMode.WALKING}
+  function modeFor(key,index){return (key==='d1'&&(index<=1||index===11||index===13))||(key==='d2'&&(index===2||index===5||index===6||index===7||index===12))||(key==='d3'&&index===1)?google.maps.TravelMode.TRANSIT:google.maps.TravelMode.WALKING}
   function drawSegment(a,b,path,mode,color,duration,planned,isFallback){
     const line=new google.maps.Polyline({map,path,strokeOpacity:0,strokeWeight:6,clickable:true,zIndex:1,icons:[{icon:{path:google.maps.SymbolPath.CIRCLE,fillColor:color,fillOpacity:1,strokeColor:'#fff',strokeOpacity:1,strokeWeight:1,scale:3.5},offset:'0',repeat:'15px'}]});
     const modeText=mode===google.maps.TravelMode.TRANSIT?'JR·대중교통':'도보';
