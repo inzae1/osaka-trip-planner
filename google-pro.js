@@ -6,7 +6,7 @@
   const canvas=document.getElementById('gmapsCanvas');
   const fallback=document.getElementById('routeMap');
   let map, currentKey='d1', markers=[], renderers=[], hoverInfo, activeInfo;
-  const planIds={d1:['kix','tengachaya','kitahamaSt','apa','saru','manpuku','kita','kingN','lika','yama','cabin','hana','hitori','akaU','iwai','mcd','apa'],d2:['sukiya','kitahamaSt','hsuita','asahi','hsuita','maren','naka','black','matsu','akaU','hanamaru','sumi','apa'],d3:['apa','kitahamaSt','metro','kin','hozen','melon','kingB','kona','ultra','akaN','metro','nankai']};
+  const planIds={d1:['kix','tengachaya','kitahamaSt','apa','saru','moto','manpuku','nakanoshima','kingN','lika','cabin','hanshinBeer','hitori','matsu','iwai','mcd','apa'],d2:['sukiya','kitahamaSt','hsuita','asahi','hsuita','maren','naka','yatt','black','akaU','hanamaru','hanamaru','toriki','apa'],d3:['apa','kitahamaSt','metro','kin','hozen','melon','kingB','kona','ultra','akaN','metro','nankai']};
   const planTimes={}; Object.entries(routePlans).forEach(([k,v])=>planTimes[k]=v.stops.map(x=>x[0]));
   function clearMap(){markers.forEach(x=>x.setMap(null));renderers.forEach(x=>x.setMap(null));markers=[];renderers=[];hoverInfo?.close();activeInfo?.close();activeInfo=null}
   function modeFor(key,index){return (key==='d1'&&(index<=1||index===13))||(key==='d2'&&(index===1||index===4||index===9))||(key==='d3'&&index===1)?google.maps.TravelMode.TRANSIT:google.maps.TravelMode.WALKING}

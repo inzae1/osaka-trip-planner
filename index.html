@@ -9,18 +9,19 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="map-fallback.css" />
   <link rel="stylesheet" href="google-map.css" />
+  <link rel="stylesheet" href="ui-v2.css?v=20261016a" />
 </head>
 <body>
   <header class="hero">
     <div class="eyebrow">OSAKA · 2 NIGHTS / 3 DAYS</div>
     <h1>먹고, 마시고,<br><em>정확하게</em> 걷는 오사카</h1>
-    <p>공식 주소를 잠그고 실제 좌표를 검증한 여행 플래너. 지도는 Google Maps, 일정 경로는 주소 기반입니다.</p>
+    <p>정확한 핀, 이동시간, 먹을 메뉴와 생맥주까지. 3일의 흐름을 한 화면에 담은 오사카 테이스팅 플래너.</p>
     <div class="hero-actions">
       <a href="#overview" class="button primary">전체 지도 보기</a>
       <a class="button ghost" id="locateBtn" href="https://www.google.com/maps" target="_blank">Google Maps 열기</a>
     </div>
     <div class="status-row">
-      <span><b>APA 기타하마 기준</b> 주소 핀</span><span><b>3</b>일 실제 지도</span><span>갱신일 <b>2026.10.15</b></span>
+      <span><b>APA 기타하마 기준</b> 주소 핀</span><span><b>3</b>일 실제 지도</span><span>갱신일 <b>2026.10.16</b></span>
     </div>
   </header>
 
@@ -51,10 +52,10 @@
       </div>
       <div class="route-buttons">
         <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=関西国際空港&destination=アパホテル淀屋橋北浜駅前&waypoints=天下茶屋駅%7C北浜駅&travelmode=transit">DAY 1 KIX→기타하마 ↗</a>
-        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=アパホテル淀屋橋北浜駅前&destination=はなだこ&waypoints=サル食堂%7Cまん福ベーカリー%7C北浜%7Cキングラム西天満店%7Cリカーマウンテン北新地店%7Cやまや堂島プラザ店%7Cキャビンリカー&travelmode=walking">DAY 1 기타하마→하나다코 ↗</a>
-        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=はなだこ&destination=アパホテル淀屋橋北浜駅前&waypoints=ひとりカルビ1965%7C赤垣屋梅田店%7C祝い鳥淀屋橋本店%7Cマクドナルド淀屋橋店&travelmode=walking">DAY 1 우메다→APA ↗</a>
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=アパホテル淀屋橋北浜駅前&destination=キャビンリカー&waypoints=サル食堂%7CMOTO%20COFFEE%7Cまん福ベーカリー%7C中之島%7Cキングラム西天満店%7Cリカーマウンテン北新地店&travelmode=walking">DAY 1 기타하마→캐빈리커 ↗</a>
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=阪神ビールスタンド&destination=アパホテル淀屋橋北浜駅前&waypoints=ひとりカルビ1965%7C松葉総本店%7C祝い鳥淀屋橋本店%7Cマクドナルド淀屋橋店&travelmode=walking">DAY 1 우메다→APA ↗</a>
         <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=北浜駅&destination=アサヒビールミュージアム&waypoints=阪急吹田駅&travelmode=transit">DAY 2 기타하마→스이타 ↗</a>
-        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=中崎町駅&destination=アパホテル淀屋橋北浜駅前&waypoints=BLACK%20LABEL%20THE%20BAR%20OSAKA%7C松葉総本店%7C赤垣屋梅田店%7C花まる亭淀屋橋店%7C炭イッカ&travelmode=walking">DAY 2 나카자키초→요도야바시 ↗</a>
+        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=YATT%20Nakazakicho&destination=アパホテル淀屋橋北浜駅前&waypoints=BLACK%20LABEL%20THE%20BAR%20OSAKA%7C赤垣屋梅田店%7C花まる亭淀屋橋店%7C鳥貴族北浜店&travelmode=walking">DAY 2 나카자키초→기타하마 ↗</a>
         <a target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Osaka%20Metro%20なんば駅&destination=南海なんば駅&waypoints=大阪市中央区道頓堀1-7-26%7C大阪市中央区難波1-2-16%7C大阪市浪速区日本橋4-8-10%7C大阪市中央区難波千日前11-24%7C大阪市中央区難波千日前7-10%7C大阪市中央区難波3-1-32&travelmode=walking">DAY 3 난바 ↗</a>
       </div>
     </section>
@@ -66,7 +67,7 @@
 
     <section class="section detail-maps">
       <div class="section-head"><div><span class="kicker">NEIGHBORHOOD MAPS</span><h2>지역별 확대 지도</h2></div><p>복잡한 구간은 실제 축척으로 따로 확인</p></div>
-      <article class="detail-card"><div class="detail-copy"><span class="map-tag">UMEDA</span><h3>우메다 확대</h3><p>리쿼샵 순회, 나카자키초, BLACK LABEL THE BAR와 우메다 식당 구간을 한 장에.</p></div><iframe class="google-map small" src="https://maps.google.com/maps?q=Umeda%2C%20Osaka&z=15&output=embed" title="우메다 Google 지도" loading="lazy" allowfullscreen></iframe></article>
+      <article class="detail-card"><div class="detail-copy"><span class="map-tag">UMEDA</span><h3>우메다 확대</h3><p>리쿼샵, 한신 비어스탠드, 히토리카루비와 마츠바 구간을 실제 지도에서 확인합니다.</p></div><iframe class="google-map small" src="https://maps.google.com/maps?q=Umeda%2C%20Osaka&z=15&output=embed" title="우메다 Google 지도" loading="lazy" allowfullscreen></iframe></article>
       <article class="detail-card"><div class="detail-copy"><span class="map-tag">SUITA</span><h3>스이타 확대</h3><p>기타하마에서 사카이스지선·한큐선을 타고 한큐 스이타역으로 이동한 뒤, 박물관까지 약 10분 걷는 기준입니다. 예약 시간 15분 전 도착 권장.</p></div><iframe class="google-map small" src="https://maps.google.com/maps?q=Asahi%20Beer%20Museum%20Suita&z=16&output=embed" title="스이타 Google 지도" loading="lazy" allowfullscreen></iframe></article>
       <article class="detail-card"><div class="detail-copy"><span class="map-tag">NAMBA</span><h3>난바 확대</h3><p><strong>Osaka Metro 난바역</strong>과 <strong>난카이 난바역</strong>은 별도 핀입니다. 짐 회수 후 남쪽의 난카이역으로 이동하세요.</p></div><iframe class="google-map small" src="https://maps.google.com/maps?q=Namba%2C%20Osaka&z=15&output=embed" title="난바 Google 지도" loading="lazy" allowfullscreen></iframe></article>
     </section>
@@ -84,8 +85,8 @@
     </section>
   </main>
   <footer><p>실제 좌표·공식 주소 기반 · 이동시간은 신호, 지하상가, 대기시간에 따라 달라질 수 있습니다.</p></footer>
-  <script src="app.js?v=20261015f"></script>
-  <script src="google-routes.js?v=20261015f"></script>
-  <script src="google-pro.js?v=20261015f"></script>
+  <script src="app.js?v=20261016a"></script>
+  <script src="google-routes.js?v=20261016a"></script>
+  <script src="google-pro.js?v=20261016a"></script>
 </body>
 </html>
